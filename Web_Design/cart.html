@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moksh Agarbatti</title>
+  <link rel="stylesheet" href="style/adminhome.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/cart.css">
+  
+</head>
+
+<body>
+  <nav>
+    <div class="menu-icon">
+      <span class="fas fa-bars"></span>
+    </div>
+    <div class="logo">
+      <strong>MokshAgarbatti</strong>
+    </div>
+    <div class="nav-items">
+      <li>
+        <div class="dropdown">
+          <a href="adminhome.html"><i class="fa fa-fw fa-home" style="color:blue;"></i>Home</a>
+          <div class="dropdown-content">
+            <a href="aboutus.html" style="color: red;"><i class="fas fa-bullhorn" style="color:black;"></i>&nbspAbout Us</a>
+            <a href="contactus.html" style="color: red;"><i class="icon fa fa-envelope fa-lg"
+                style="color:black;"></i>&nbspContact</a>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="dropdown">
+          <a href="#"><i class="fa fa-list-ol" style="color:blue;"></i>Product</a>
+          <div class="dropdown-content">
+            <a href="addproduct.html" style="color: red;"><i class="fa fa-plus" style="color:black;"></i>&nbspAdd-Product</a>
+            <a href="product.html" style="color: red;"><i class="fas fa-th-list" style="color:black;"></i>&nbspAgarbatti</a>
+            <a href="product.html" style="color: red;"><i class="fas fa-th-list" style="color:black;"></i>&nbspDhoop</a>
+            <a href="product.html" style="color: red;"><i class="fas fa-th-list" style="color:black;"></i>&nbspGulab-Jal</a>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="dropdown">
+          <a href="#"><i class='fas fa-users' style="color:blue;"></i>Users</a>
+          <div class="dropdown-content">
+            <a href="signup.html" style="color: red;"><i class="fa fa-plus" style="color:black;"></i>&nbspAdd User</a>
+            <a href="addadmin.html" style="color: red;"><i class="fa fa-plus" style="color:black;"></i>&nbspAdd Admin</a>
+            <a href="user.html" style="color: red;"><i class="fas fa-user-plus" style="color:black;"></i>&nbspRetailers</a>
+            <a href="user.html" style="color: red;"><i class="fas fa-user-plus" style="color:black;"></i>&nbspAdmin</a>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="dropdown">
+          <a href="#"><i class='fas fa-cart-plus' style="color:blue;"></i>Order</a>
+          <div class="dropdown-content">
+            <a href="#" style="color: red;"><i class="far fa-calendar-alt" style="color:black;"></i>&nbspPending</a>
+            <a href="#" style="color: red;"><i class="fas fa-shipping-fast" style="color:black;"></i>Complete</a>
+          </div>
+        </div>
+      </li>
+
+
+      <li></li>
+      <li><a href="login.html"><i class="fa fa-fw fa-user" style="color:blue;"></i>Account</a></li>
+
+    </div>
+    <div class="search-icon">
+      <span class="fas fa-search"></span>
+    </div>
+    <div class="cancel-icon">
+      <span class="fas fa-times"></span>
+    </div>
+    <form action="#">
+      <input type="search" class="search-data" placeholder="Search" required>
+      <button type="submit" class="fas fa-search"></button>
+    </form>
+
+
+  </nav>
+
+
+  <script>
+    const menuBtn = document.querySelector(".menu-icon span");
+    const searchBtn = document.querySelector(".search-icon");
+    const cancelBtn = document.querySelector(".cancel-icon");
+    const items = document.querySelector(".nav-items");
+    const form = document.querySelector("form");
+    menuBtn.onclick = () => {
+      items.classList.add("active");
+      menuBtn.classList.add("hide");
+      searchBtn.classList.add("hide");
+      cancelBtn.classList.add("show");
+    }
+    cancelBtn.onclick = () => {
+      items.classList.remove("active");
+      menuBtn.classList.remove("hide");
+      searchBtn.classList.remove("hide");
+      cancelBtn.classList.remove("show");
+      form.classList.remove("active");
+      cancelBtn.style.color = "#ff3d00";
+    }
+    searchBtn.onclick = () => {
+      form.classList.add("active");
+      searchBtn.classList.add("hide");
+      cancelBtn.classList.add("show");
+    }
+  </script>
+
+
+
+
+<div class="container pb-5 mb-2">
+  <!-- Alert-->
+  <div class="alert alert-info alert-dismissible fade show text-center mb-30"><span class="alert-close" data-dismiss="alert"></span><h1>My Cart</h1></div>
+  <!-- Cart Item-->
+  <div class="cart-item d-md-flex justify-content-between"><span class="remove-item"><i class="fa fa-times"></i></span>
+      <div class="px-3 my-3">
+          <a class="cart-item-product" href="#">
+              <div class="cart-item-product-thumb"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Product"></div>
+              <div class="cart-item-product-info">
+                  <h4 class="cart-item-product-title">Canon EOS M50 Mirrorless Camera</h4><span><strong>Type:</strong> Mirrorless</span><span><strong>Color:</strong> Black</span>
+              </div>
+          </a>
+      </div>
+      <div class="px-3 my-3 text-center">
+          <div class="cart-item-label">Quantity</div>
+          <div class="count-input">
+            <div class="form-group">
+              <input type="quantity" class="form-control" id="quantity" aria-describedby="emailHelp" placeholder="1">
+            </div>
+          </div>
+      </div>
+      <div class="px-3 my-3 text-center">
+          <div class="cart-item-label">Subtotal</div><span class="text-xl font-weight-medium">$910.00</span>
+      </div>
+      <div class="px-3 my-3 text-center">
+          <div class="cart-item-label">Discount</div><span class="text-xl font-weight-medium">$35.00</span>
+      </div>
+  </div>
+  <!-- Cart Item-->
+  <div class="cart-item d-md-flex justify-content-between"><span class="remove-item"><i class="fa fa-times"></i></span>
+      <div class="px-3 my-3">
+          <a class="cart-item-product" href="#">
+              <div class="cart-item-product-thumb"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="Product"></div>
+              <div class="cart-item-product-info">
+                  <h4 class="cart-item-product-title">Apple iPhone X 256 GB Space Gray</h4><span><strong>Memory:</strong> 256GB</span><span><strong>Color:</strong> Space Gray</span>
+              </div>
+          </a>
+      </div>
+      <div class="px-3 my-3 text-center">
+          <div class="cart-item-label">Quantity</div>
+          <div class="count-input">
+            <div class="form-group">
+              <input type="quantity" class="form-control" id="quantity" aria-describedby="emailHelp" placeholder="1">
+            </div>
+          </div>
+      </div>
+      <div class="px-3 my-3 text-center">
+          <div class="cart-item-label">Subtotal</div><span class="text-xl font-weight-medium">$1,450.00</span>
+      </div>
+      <div class="px-3 my-3 text-center">
+          <div class="cart-item-label">Discount</div><span class="text-xl font-weight-medium">—</span>
+      </div>
+  </div>
+  <!-- Cart Item-->
+  <div class="cart-item d-md-flex justify-content-between"><span class="remove-item"><i class="fa fa-times"></i></span>
+      <div class="px-3 my-3">
+          <a class="cart-item-product" href="#">
+              <div class="cart-item-product-thumb"><img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="Product"></div>
+              <div class="cart-item-product-info">
+                  <h4 class="cart-item-product-title">HP LaserJet Pro Laser Printer</h4><span><strong>Type:</strong> Laser</span><span><strong>Color:</strong> White</span>
+              </div>
+          </a>
+      </div>
+      <div class="px-3 my-3 text-center">
+          <div class="cart-item-label">Quantity</div>
+          <div class="count-input">
+            <div class="form-group">
+              <input type="quantity" class="form-control" id="quantity" aria-describedby="emailHelp" placeholder="1">
+            </div>
+          </div>
+      </div>
+      <div class="px-3 my-3 text-center">
+          <div class="cart-item-label">Subtotal</div><span class="text-xl font-weight-medium">$188.50</span>
+      </div>
+      <div class="px-3 my-3 text-center">
+          <div class="cart-item-label">Discount</div><span class="text-xl font-weight-medium">—</span>
+      </div>
+  </div>
+  <!-- Coupon + Subtotal-->
+  <div class="d-sm-flex justify-content-between align-items-center text-center text-sm-left">
+     
+      <div class="py-2"><span class="d-inline-block align-middle text-sm text-muted font-weight-medium text-uppercase mr-2 p-3 mb-2 bg-warning text-dark">Subtotal : </span><span class="d-inline-block align-middle text-xl font-weight-medium"><strong>&nbsp;&nbsp;$188.50</strong></span></div>
+  </div>
+  <!-- Buttons-->
+  <hr class="my-2">
+  <div class="row pt-3 pb-5 mb-2">
+      <div class="col-sm-6 mb-3"><button type="button" class="btn btn-success">  &nbsp;Checkout & Proceed for Payment</button>
+      </a>
+      </div>
+  </div>
+
+     
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<nav>
+    <div class="menu-icon">
+       <span class="fas fa-bars"></span>
+    </div>
+    <div class="logo">
+       <strong>MokshAgarbatti</strong>
+    </div>
+    <div class="nav-items">
+       <li>
+          <div class="dropdown">
+             <a href="/userpage"><i class="fa fa-fw fa-home" style="color:blue;"></i>&nbspHome</a>
+             <div class="dropdown-content">
+                <a href="aboutus" style="color: red;"><i class="fas fa-bullhorn" style="color:black;"></i>&nbspAbout Us</a>
+                <a href="contactus" style="color: red;"><i class="icon fa fa-envelope fa-lg"
+                      style="color:black;"></i>&nbspContact</a>
+             </div>
+          </div>
+       </li>
+    
+       <li>
+          <div class="dropdown">
+             <a href="#"><i class="fa fa-list-ol" style="color:blue;"></i>&nbspProduct</a>
+             <div class="dropdown-content">
+               <a href="javascript:getProduct('AGARBATTI')" style="color: red;"><i class="fas fa-th-list" style="color:black;"></i>&nbspAgarbatti</a>
+               <a href="javascript:getProduct('DHOOP')" style="color: red;"><i class="fas fa-th-list" style="color:black;"></i>&nbspDhoop</a>
+               <a href="javascript:getProduct('GULABJAL')" style="color: red;"><i class="fas fa-th-list" style="color:black;"></i>&nbspGulab-Jal</a>
+              </div>
+          </div>
+       </li>
+    
+       <li>
+          <a href="cart"><i class='fas fa-shopping-basket' style="color:blue;"></i>&nbspCart</a>
+       </li>
+    
+       <li>
+          <div class="dropdown">
+             <a href="javascript:myOrder()"><i class='fas fa-cart-plus' style="color:blue;"></i>&nbspOrder</a>
+          </div>
+       </li>
+    
+       <li><a href="profile"><i class="fa fa-fw fa-user" style="color:blue;"></i>My Profile</a></li>
+    
+    </div>
+    <div class="search-icon">
+       <!-- <span class="fas fa-search"></span> -->
+    </div>
+    <div class="cancel-icon">
+       <span class="fas fa-times"></span>
+    </div>
+    <form action="#">
+       <!-- <input type="search" class="search-data" placeholder="Search" required>
+       <button type="submit" class="fas fa-search"></button> -->
+    </form>
+    
+    
+    
+    
+    
+    <script>
+    const menuBtn = document.querySelector(".menu-icon span");
+    const searchBtn = document.querySelector(".search-icon");
+    const cancelBtn = document.querySelector(".cancel-icon");
+    const items = document.querySelector(".nav-items");
+    const form = document.querySelector("form");
+    menuBtn.onclick = () => {
+       items.classList.add("active");
+       menuBtn.classList.add("hide");
+       searchBtn.classList.add("hide");
+       cancelBtn.classList.add("show");
+    }
+    cancelBtn.onclick = () => {
+       items.classList.remove("active");
+       menuBtn.classList.remove("hide");
+       searchBtn.classList.remove("hide");
+       cancelBtn.classList.remove("show");
+       form.classList.remove("active");
+       cancelBtn.style.color = "#ff3d00";
+    }
+    searchBtn.onclick = () => {
+       form.classList.add("active");
+       searchBtn.classList.add("hide");
+       cancelBtn.classList.add("show");
+    }
+    </script>
+    <script src="js/order.js"></script>
+    <script src="js/viewproduct.js"></script>
+    <script src="js/cart.js"></script>
+  </nav>
+
+  

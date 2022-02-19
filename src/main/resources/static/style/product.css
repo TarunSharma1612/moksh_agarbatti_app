@@ -1,0 +1,35 @@
+body {
+    background: gray
+}
+
+.wrapper {
+    margin-top: 30px
+}
+
+.card {
+    border: 6px solid  rgb(156, 31, 31);
+    border-radius: 20px;
+    margin-top: 9px;
+    cursor: pointer
+}
+
+.weight {
+    margin-top: -65px;
+    transition: all 0.5s
+}
+
+.weight small {
+    color: #e2dede
+}
+
+
+
+.card:hover .weight {
+    margin-top: 10px
+}
+
+.card:hover {
+    transform: scale(1.04);
+    z-index: 2;
+    overflow: hidden
+}
