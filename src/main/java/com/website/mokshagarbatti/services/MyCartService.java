@@ -63,7 +63,7 @@ public class MyCartService {
 		Optional<MyCartEntity> existingCart = cartRepo.findCartByDetails(requestModel.getProductId(),
 				requestModel.getUserId());
 		Optional<ProductEntity> productDetails = productRepo.findById(requestModel.getProductId());
-		if (existingCart.isPresent() || productDetails.isEmpty()) {
+		if (existingCart.isPresent() || productDetails == null) {
 			return "cart already exists with given details";
 		}
 		ProductEntity existingProductDetails = productDetails.get();
