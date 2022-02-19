@@ -85,7 +85,7 @@ public class MyCartService {
 	public String updateCartDetails(AddCartRequestModel requestModel) {
 		Optional<MyCartEntity> existingCart = cartRepo.findById(requestModel.getCartId());
 		Optional<ProductEntity> productDetails = productRepo.findById(requestModel.getProductId());
-		if (existingCart.isPresent() || productDetails.isEmpty()) {
+		if (existingCart.isPresent() || productDetails == null) {
 			ProductEntity existingProductDetails = productDetails.get();
 			MyCartEntity newcart = existingCart.get();
 			Date date = new Date();
