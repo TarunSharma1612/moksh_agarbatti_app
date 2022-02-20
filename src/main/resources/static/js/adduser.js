@@ -87,7 +87,7 @@ function loadhome () {
   if (role == "ADMIN") {
     url += "/adminpage";
   }else {
-    url +="/userpage";
+    url +="/";
   }
   
   window.location.href = url;

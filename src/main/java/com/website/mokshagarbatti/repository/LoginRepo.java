@@ -12,11 +12,11 @@ import com.website.mokshagarbatti.entity.LoginEntity;
 @Repository
 public interface LoginRepo extends JpaRepository<LoginEntity, Long> {
 
-	@Query(value = "select * from login_details where user_name = ?1"
+	@Query(value = "select * from login_details where lower(user_name) = ?1"
 			+ " and password = ?2 and role = ?3" , nativeQuery = true)
 	Optional<LoginEntity> checkLoginDetails(String username, String password, String string);
 
-	@Query(value = "select * from login_details where user_name = ?1" , nativeQuery = true)
+	@Query(value = "select * from login_details where lower(user_name) = ?1" , nativeQuery = true)
 	Optional<LoginEntity> findByUserName(String username);
 
 }

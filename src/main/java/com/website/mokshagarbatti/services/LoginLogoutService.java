@@ -24,10 +24,9 @@ public class LoginLogoutService {
 	private UserRepo userRepo;
 	
 	public String checkLoginDetails(@Valid LoginRequestModel request) {
-		Optional<LoginEntity> entity = loginRepo.checkLoginDetails(request.getUsername(),
+		Optional<LoginEntity> entity = loginRepo.checkLoginDetails(request.getUsername().toLowerCase(),
 				request.getPassword(),request.getRoles());
-		//,request.getRoles()
-		System.out.println(request.getUsername()+" "+request.getPassword()+" "+request.getRoles());
+		
 		if (entity.isPresent()) {
 			return "Login Successful";
 		}
@@ -35,7 +34,7 @@ public class LoginLogoutService {
 	}
 
 	public String addNewAdmin(@Valid AddAdminRequestModel request) {
-		Optional<LoginEntity> entity = loginRepo.findByUserName(request.getUsername());
+		Optional<LoginEntity> entity = loginRepo.findByUserName(request.getUsername().toLowerCase());
 		if (entity.isPresent()) {
 			return "User with this email id already exist";
 		}
@@ -57,7 +56,7 @@ public class LoginLogoutService {
 
 	public String updateAdminDetails(@Valid AddAdminRequestModel request) {
 		
-		Optional<LoginEntity> entity = loginRepo.findByUserName(request.getUsername());
+		Optional<LoginEntity> entity = loginRepo.findByUserName(request.getUsername().toLowerCase());
 		if (entity.isPresent()) {
 			LoginEntity newAdmin = entity.get();
 			Date createdDate = new Date();
@@ -83,7 +82,7 @@ public class LoginLogoutService {
 		if (userOptional.isPresent()) {
 			return userOptional.get();
 		}else {
-			Optional<LoginEntity> admin = loginRepo.findByUserName(userEmail);
+			Optional<LoginEntity> admin = loginRepo.findByUserName(userEmail.toLowerCase());
 			if (admin.isPresent()) {
 				return admin.get();
 			}
