@@ -32,11 +32,15 @@
     <div id="nav">
     </div>
     <script>
-      
-      $(function(){
-    $("#nav").load("adminnav.html");
-    jQuery.noConflict();
-    });
+       if (sessionStorage.getItem("ROLE") == "ADMIN") {
+            $(function () {
+                $("#nav").load("adminnav.html");
+            });
+        } else {
+            $(function () {
+                $("#nav").load("usernav.html");
+            });
+        }
     </script>
   
   <section class="vh-100" style="background-color: #f4f5f7;">
