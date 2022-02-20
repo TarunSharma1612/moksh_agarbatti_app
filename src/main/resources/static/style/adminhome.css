@@ -22,7 +22,7 @@ nav{
 nav .logo{
     background-color: whitesmoke;
   color: red;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 600;
   letter-spacing: -1px;
 }
@@ -235,7 +235,7 @@ nav .logo.space{
   font-weight: 700;
 }
 .content .space{
-  margin: 10px 0;
+  margin: 10px 10px;
 }
 
 
