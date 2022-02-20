@@ -55,8 +55,11 @@ public class OrderService {
 	}
 
 	public String addOrderDetails(AddOrderRequestModel requestModel) {
-		List<String> cartIds = new ArrayList<String>(Arrays.asList(requestModel.getCartId().split(",")));
-		
+		List<String> cartIdString = new ArrayList<String>(Arrays.asList(requestModel.getCartId().split(",")));
+		List<Long> cartIds = new ArrayList<>();
+		for (String cartId : cartIdString) {
+			cartIds.add(Long.parseLong(cartId));
+		}
 		List<Order> existingOrder = cartRepo.findByCartId(cartIds);
 		
 		if (!existingOrder.isEmpty()) {

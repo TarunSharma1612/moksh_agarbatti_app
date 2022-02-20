@@ -20,9 +20,9 @@ public interface MyCartRepo extends JpaRepository<MyCartEntity, Long> {
 	Optional<MyCartEntity> findCartByDetails(long productId, long userId);
 
 	@Query(value = "select * from user_cart_details where cart_id in ?1 and status = 'PENDING_WITH_ADMIN'" ,nativeQuery = true)
-	List<Order> findByCartId(List<String> cartId);
+	List<Order> findByCartId(List<Long> cartIds);
 
 	@Query(value = "select * from user_cart_details where cart_id in ?1 and status = 'PENDING_IN_CART'" ,nativeQuery = true)
-	List<MyCartEntity> findByIdAndStatus(List<String> cartId);
+	List<MyCartEntity> findByIdAndStatus(List<Long> cartIds);
 
 }
