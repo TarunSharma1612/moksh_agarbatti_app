@@ -36,15 +36,19 @@
                 data-dismiss="alert"></span>
             <h1>My Cart</h1>
         </div>
-        <div id="mycart">
+        <div id="mycart" >
             
         </div>
 
 
     <div class="py-2" id="btn"><span
                     class="d-inline-block align-middle text-sm  bg-warning text-dark">Subtotal
-                    : </span><span id="total" class="d-inline-block align-middle text-xl font-weight-medium"></span>
-                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;<button type="button" onclick="addOrder()" class="btn btn-success">Click to Order</button>
+                    : </span>
+                    <span id="total" class="d-inline-block align-middle text-xl font-weight-medium"></span>
+                
+
+                    &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                    <button type="button" onclick="addOrder()" class="btn btn-success">Click to Order</button>
     </div>
        
     </div>
@@ -56,6 +60,9 @@
           document.getElementById("mycart").innerHTML = '<div class="p-3 mb-2 bg-primary text-white">No Item Available</div>';
           document.getElementById("btn").style.display="none";  
         }
+
+         document.getElementById("total").innerHTML = sessionStorage.getItem("TOTAL");
+               
       </script>
     <script src="js/cart.js"></script>
     <script src="js/order.js"></script>
