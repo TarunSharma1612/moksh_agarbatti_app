@@ -15,7 +15,7 @@
 
 </head>
 
-<body onload="getCart()">
+<body >
     <div id="nav">
     </div>
     <script>
@@ -51,7 +51,7 @@
     <script>
         if (sessionStorage.getItem("CART") != null) {
           document.getElementById("mycart").innerHTML = sessionStorage.getItem("CART");
-            sessionStorage.removeItem("CART");
+            // sessionStorage.removeItem("CART");
         } else {
           document.getElementById("mycart").innerHTML = '<div class="p-3 mb-2 bg-primary text-white">No Item Available</div>';
           document.getElementById("btn").style.display="none";  

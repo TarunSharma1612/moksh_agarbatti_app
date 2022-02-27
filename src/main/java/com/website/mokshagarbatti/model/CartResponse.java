@@ -6,7 +6,7 @@ public class CartResponse {
 	private long quantity;
 	private float cartTotal;
 	private String productName;
-	private String imgPath;
+	private String category;
 	public long getCartId() {
 		return cartId;
 	}
@@ -31,11 +31,11 @@ public class CartResponse {
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-	public String getImgPath() {
-		return imgPath;
+	public String getCategory() {
+		return category;
 	}
-	public void setImgPath(String imgPath) {
-		this.imgPath = imgPath;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 	
 }

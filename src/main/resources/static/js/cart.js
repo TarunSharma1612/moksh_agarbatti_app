@@ -74,7 +74,7 @@ function getCart(){
         '<div class="cart-item d-md-flex justify-content-between">' + 
             ' <div class="px-3 my-3">'+
             '<div class="cart-item-product">'+
-            '<h4 class="cart-item-product-title">'+obj.productName+'('+obj.category+')</h4></div></div><div>'+
+            '<h4 class="cart-item-product-title">'+obj.productName+'&nbsp;(&nbsp;'+obj.category+'&nbsp;)&nbsp;</h4></div></div><div>'+
             '<div class="px-3 my-3 text-center">'+
             '<div class="cart-item-label">Quantity</div>'+
             '<div class="count-input">'+
@@ -87,8 +87,10 @@ function getCart(){
        }
        sessionStorage.setItem("CART",cart);
        sessionStorage.setItem("CARTID",cartIds);
+      
+       window.location.href="/cart";
+
        document.getElementById("total").innerHTML ="&nbsp;&nbsp;&nbsp;Rs.&nbsp;" + Math.ceil( total );
-       window.location.href("/cart");
     });
 
 }
