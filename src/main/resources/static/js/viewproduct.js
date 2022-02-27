@@ -18,23 +18,45 @@ function getProduct(category) {
            
            for (let index = 0; index < arr.length; index++) {
                var obj = arr[index];
-               productcard +=
-            '<div class="col-md-3">' + 
-                '<div class="card p-3">'+
-                // '<div class="text-center"> <img src= "'+obj.productImagePath + '" width="200"> </div>'+
-                '<div class="product-details">'+
-                '<h6 class="p-3 mb-2 bg-warning text-dark"> '+obj.category+'&nbsp;-->&nbsp;<strong>'+obj.productName+'</strong> </h6>'+
-                '<p class="p-3 mb-2 bg-danger text-white">Rs.' + obj.price+' &nbsp;&nbsp; Discount- '+
-                obj.discount+'% </p>'+
+              //  productcard +=
+            // '<div class="col-md-3">' + 
+            //     '<div class="card p-3">'+
+            //     '<div class="product-details">'+
+            //     '<h6 class="p-3 mb-2 bg-warning text-dark"> '+obj.category+'&nbsp;-->&nbsp;<strong>'+obj.productName+'</strong> </h6>'+
+                // '<p class="p-3 mb-2 bg-danger text-white">Rs.' + obj.price+' &nbsp;&nbsp; Discount- '+
+                // obj.discount+'% </p>'+
                 
-                '<div class="buttons d-flex flex-row">'+
-                '<div class="row">'+
-                '<div class="col">'+
-                '<input type="text" id="qty'+obj.productId+'"class="form-control" placeholder="Qty.">'+
-                '</div>'+
-                '<div class="col">'+
-                '<button value='+obj.productId+' onclick="addToCart(this.value)" class="btn btn-success"> Add to Cart</button>'+
-                '</div></div></div></div></div></div>';
+                // '<div class="buttons d-flex flex-row">'+
+                // '<div class="row">'+
+                // '<div class="col">'+
+                // '<input type="text" id="qty'+obj.productId+'"class="form-control" placeholder="Qty.">'+
+                // '</div>'+
+                // '<div class="col">'+
+                // '<button value='+obj.productId+' onclick="addToCart(this.value)" class="btn btn-success"> Add to Cart</button>'+
+                // '</div></div></div></div></div></div>';
+
+
+            productcard += '<div class="card p-3">'+
+            ' <div class="card-header">'+
+            ' <a class="card-link" data-toggle="collapse" href="#col'+obj.productId+'">'+
+            '<h6 class="p-3 mb-2 bg-warning text-dark"> '+obj.category+'&nbsp;-->&nbsp;<strong>'+obj.productName+'</strong> </h6></a> </div>'+
+            ' <div id="col'+obj.productId+'" class="collapse" data-parent="#accordion">'+
+            '<div class="card-body"> '+
+            '<p class="p-3 mb-2 bg-danger text-white">Rs.' + obj.price+' &nbsp;&nbsp; Discount- '+
+            obj.discount+'% </p>'+
+            
+            '<div class="buttons d-flex flex-row">'+
+            '<div class="row">'+
+            '<div class="col">'+
+            '<input type="text" id="qty'+obj.productId+'"class="form-control" placeholder="Qty.">'+
+            '</div>'+
+            '<div class="col">'+
+            '<button value='+obj.productId+' onclick="addToCart(this.value)" class="btn btn-success"> Add to Cart</button>'+
+            '</div></div></div></div></div></div>'+
+            ' </div></div> </div>';
+
+
+
            }
            sessionStorage.setItem("PRODUCT",productcard);
            window.location.href = '/product';
