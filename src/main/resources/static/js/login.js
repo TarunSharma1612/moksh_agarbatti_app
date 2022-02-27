@@ -69,10 +69,11 @@ function myProfile() {
         const arr = data['status'];
         var card = "";
         if (arr.role == 'RETAILER') {
+          let shopName = arr.retailerShopName;
           card += '<div class="col-md-4 gradient-custom text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">'
             + '<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"'
             + ' alt="Avatar" class="img-fluid my-5" style="width: 80px;"/>'
-            + '<h5 id="shopName">' + arr.retailerShopName + '</h5>'
+            + '<h5 id="shopName">' + shopName + '</h5>'
             + '<h3 id="role">' + arr.role + '</h3>'
             + '<br>'
             + '<br>'
