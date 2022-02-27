@@ -76,9 +76,27 @@ function newProduct(){
                 '</div></div></div>';
            }
            sessionStorage.setItem("NEWPRODUCT",productcard);
+           console.log("inside API");
+           console.log(sessionStorage.getItem("NEWPRODUCT"));
+           loadhome();
         })
         .catch(error => {
           console.log('error catch');
         } );
+
+}
+
+
+function loadhome () {
+ 
+  const role = sessionStorage.getItem("ROLE");
+  let url = "/";
+  if (role == "ADMIN") {
+    url = url+"adminpage"
+  }else{
+    url = url+"userpage"
+  } 
+  
+  window.location.href = url;
 
 }

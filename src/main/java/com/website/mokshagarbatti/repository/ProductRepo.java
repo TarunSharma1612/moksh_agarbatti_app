@@ -22,7 +22,7 @@ public interface ProductRepo extends JpaRepository<ProductEntity, Long> {
 	@Query(value = "select * from product_details where lower(product_name) like ?1" ,nativeQuery = true)
 	List<ProductEntity> findByName(String name);
 
-	@Query(value = "select * from product_details order by created_at desc Limit 3" ,nativeQuery = true)
+	@Query(value = "select * from product_details order by created_at desc Limit 20" ,nativeQuery = true)
 	List<ProductEntity> findNewlyAddedProduct();
 
 

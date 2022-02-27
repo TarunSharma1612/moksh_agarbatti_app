@@ -1,5 +1,4 @@
 
-
  function checkLogin() {
     let url = "/admin/login";
 
@@ -28,7 +27,7 @@
           }).then((value) => {
             sessionStorage.setItem("ROLE",item.roles);
             sessionStorage.setItem("USERID",item.username);
-            loadhome();
+            newProduct();
           });
 
           
@@ -48,22 +47,6 @@
         button: "Try Again",
       }));
   }
-
-function loadhome () {
- 
-  const role = sessionStorage.getItem("ROLE");
-  let url = "/";
-  if (role == "ADMIN") {
-    url = url+"adminpage"
-  }else{
-    url = url+"userpage"
-  } 
-  
-  window.location.href = url;
-
-}
-
-
 
 
 function myProfile(){
@@ -85,6 +68,7 @@ function myProfile(){
       .then(data => {
         const arr = data['status'];
         sessionStorage.setItem("LOGIN",JSON.stringify(arr));
+        window.location.href = '/profile'
       })
       .catch(error => swal({
         title: "Unexpected error",
