@@ -18,15 +18,15 @@ public class AddProductRequestModel {
 	
 	private String loggedInUser;
 	
-	private MultipartFile image;
+//	private MultipartFile image;
 
-	public MultipartFile getImage() {
-		return image;
-	}
-
-	public void setImage(MultipartFile image) {
-		this.image = image;
-	}
+//	public MultipartFile getImage() {
+//		return image;
+//	}
+//
+//	public void setImage(MultipartFile image) {
+//		this.image = image;
+//	}
 
 	public Long getProductId() {
 		return productId;

@@ -1,16 +1,12 @@
 function addProduct(){
     let url = "/product/add-product";
-	 const formData = new FormData();
-	 const fileField = document.querySelector('input[type="file"]');
+	//  const formData = new FormData();
+	//  const fileField = document.querySelector('input[type="file"]');
 	 
-	 const category = document.getElementById('category').value;
-	 const productName = document.getElementById('productName').value;
-	 const productDescription = document.getElementById('productDescription').value;
-	 const price = document.getElementById('price').value;
-	 const discount = document.getElementById('discount').value;
-	 let loggedInUser = "";
+	 
+	 let loggedIn = "";
 	 if (sessionStorage.getItem("ROLE")=="ADMIN") {
-		 loggedInUser = loggedInUser+sessionStorage.getItem("USERID")
+    loggedIn = loggedIn+sessionStorage.getItem("USERID")
 	 } else {
 		swal({
             title: "Error",
@@ -25,20 +21,33 @@ function addProduct(){
          });
 
 	 }
+
+   const item = {
+    category : document.getElementById('category').value,
+    productName : document.getElementById('productName').value,
+    productDescription : document.getElementById('productDescription').value,
+    price : document.getElementById('price').value,
+    discount : document.getElementById('discount').value,
+    loggedInUser :loggedIn
+   };
+
+
 	 
 	 
-	 formData.append('category', category);
-	 formData.append('productName', productName);
-	 formData.append('productDescription', productDescription);
-	 formData.append('price', price);
-	 formData.append('discount', discount);
-	 formData.append('loggedInUser', loggedInUser);
-	 formData.append('image', fileField.files[0]);
+	//  formData.append('category', category);
+	//  formData.append('productName', productName);
+	//  formData.append('productDescription', productDescription);
+	//  formData.append('price', price);
+	//  formData.append('discount', discount);
+	//  formData.append('loggedInUser', loggedInUser);
+	//  formData.append('image', fileField.files[0]);
 
     fetch(url, {
       method: 'POST',
-      
-      body: formData,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(item),
     })
       .then(response => response.json())
       .then(data => {

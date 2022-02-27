@@ -21,11 +21,12 @@ function getProduct(category) {
                productcard +=
             '<div class="col-md-3">' + 
                 '<div class="card p-3">'+
-                '<div class="text-center"> <img src= "'+obj.productImagePath + '" width="200"> </div>'+
+                // '<div class="text-center"> <img src= "'+obj.productImagePath + '" width="200"> </div>'+
                 '<div class="product-details">'+
-                '<h6 class="p-3 mb-2 bg-danger text-white">Rs.' + obj.price+' &nbsp;&nbsp; Discount- '+
-                obj.discount+'% </h6>'+
-                '<h6 class="p-3 mb-2 bg-warning text-dark"> '+obj.productName+' </h6>'+
+                '<h6 class="p-3 mb-2 bg-warning text-dark"> '+obj.category+'&nbsp;-->&nbsp;<strong>'+obj.productName+'</strong> </h6>'+
+                '<p class="p-3 mb-2 bg-danger text-white">Rs.' + obj.price+' &nbsp;&nbsp; Discount- '+
+                obj.discount+'% </p>'+
+                
                 '<div class="buttons d-flex flex-row">'+
                 '<div class="row">'+
                 '<div class="col">'+
@@ -68,12 +69,12 @@ function newProduct(){
                productcard +=
             '<div class="col-md-3">' + 
                 '<div id = '+obj.productId+' class="card p-3">'+
-                '<div class="text-center"> <img src= "'+obj.productImagePath + '" width="200"> </div>'+
-                '<div class="product-details">'+
-                '<h6 class="p-3 mb-2 bg-danger text-white">Rs.' + obj.price+' &nbsp;&nbsp; Discount- '+
-                obj.discount+'% </h6>'+
-                '<h6 class="p-3 mb-2 bg-warning text-dark"> '+obj.productName+' </h6>'+
-                '</div></div></div>';
+                '<div class="text-center"><h6 class="p-3 mb-2 bg-secondary text-white"> '+obj.category+'&nbsp;-->&nbsp;&nbsp;<strong>'+obj.productName+ '</strong></h6></div>'+
+             
+                '<p class="p-3 mb-2 bg-danger text-white">Rs.' + obj.price+' &nbsp;&nbsp; Discount- '+
+                obj.discount+'% </p>'+
+               
+                '</div></div>';
            }
            sessionStorage.setItem("NEWPRODUCT",productcard);
            console.log("inside API");

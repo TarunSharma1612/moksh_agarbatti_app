@@ -71,7 +71,7 @@ public class UserEntity {
 	
 	private String modifiedBy;
 	
-	private String userPhotoPath;
+//	private String userPhotoPath;
 
 	public Long getUserId() {
 		return userId;
@@ -209,13 +209,13 @@ public class UserEntity {
 		this.modifiedBy = modifiedBy;
 	}
 
-	public String getUserPhotoPath() {
-		return userPhotoPath;
-	}
-
-	public void setUserPhotoPath(String userPhotoPath) {
-		this.userPhotoPath = userPhotoPath;
-	}
+//	public String getUserPhotoPath() {
+//		return userPhotoPath;
+//	}
+//
+//	public void setUserPhotoPath(String userPhotoPath) {
+//		this.userPhotoPath = userPhotoPath;
+//	}
 	
 	
 

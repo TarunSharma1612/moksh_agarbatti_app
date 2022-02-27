@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,7 +28,7 @@ public class ProductController {
 	private ProductService productService;
 	
 	@PostMapping("/add-product")
-	private Map<String, String> addProduct(@ModelAttribute AddProductRequestModel request)  throws IOException {
+	private Map<String, String> addProduct(@RequestBody AddProductRequestModel request)  throws IOException {
 		Map<String, String> result= new HashMap<>();
 		String status = productService.addProduct(request);
 		result.put("status", status);
@@ -35,7 +36,7 @@ public class ProductController {
 	}
 	
 	@PostMapping("/update-product")
-	private Map<String, String> updateProduct(@ModelAttribute AddProductRequestModel request)  throws IOException {
+	private Map<String, String> updateProduct(@RequestBody AddProductRequestModel request)  throws IOException {
 				Map<String, String> result= new HashMap<>();
 				String status = productService.updateProductDetails(request);
 				result.put("status", status);

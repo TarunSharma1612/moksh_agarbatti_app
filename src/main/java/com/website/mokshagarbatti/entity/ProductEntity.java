@@ -34,7 +34,7 @@ public class ProductEntity {
 	
 	private String modifiedBy;
 	
-	private String productImagePath;
+//	private String productImagePath;
 
 	public Long getProductId() {
 		return productId;
@@ -116,13 +116,13 @@ public class ProductEntity {
 		this.modifiedBy = modifiedBy;
 	}
 
-	public String getProductImagePath() {
-		return productImagePath;
-	}
-
-	public void setProductImagePath(String productImagePath) {
-		this.productImagePath = productImagePath;
-	}
+//	public String getProductImagePath() {
+//		return productImagePath;
+//	}
+//
+//	public void setProductImagePath(String productImagePath) {
+//		this.productImagePath = productImagePath;
+//	}
 	
 	
 }

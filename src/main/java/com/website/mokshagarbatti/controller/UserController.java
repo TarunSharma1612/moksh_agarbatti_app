@@ -30,7 +30,7 @@ public class UserController {
 	private UserService userService;
 	
 	@PostMapping("/add-retailer")
-	private Map<String, String> addRetailers(@ModelAttribute AddUserRequestModel request ) throws IOException {
+	private Map<String, String> addRetailers(@RequestBody AddUserRequestModel request ) throws IOException {
 		Map<String, String> result= new HashMap<>();
 		
 		String status = userService.addUser(request);
@@ -40,7 +40,7 @@ public class UserController {
 	}
 	
 	@PostMapping("/update-retailers")
-	private Map<String, String> updateRetailerDetails(@ModelAttribute AddUserRequestModel request) throws IOException{
+	private Map<String, String> updateRetailerDetails(@RequestBody AddUserRequestModel request) throws IOException{
 		Map<String, String> result= new HashMap<>();
 		String status = userService.updateUserDetails(request);
 		result.put("status", status);

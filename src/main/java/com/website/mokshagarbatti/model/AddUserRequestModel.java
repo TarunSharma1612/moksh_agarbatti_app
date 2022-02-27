@@ -39,7 +39,7 @@ public class AddUserRequestModel {
 	
 	private String loggedInUser;
 	
-	private MultipartFile image;
+//	private MultipartFile image;
 
 	
 	public String getEmail() {
@@ -154,13 +154,13 @@ public class AddUserRequestModel {
 		this.loggedInUser = loggedInUser;
 	}
 
-	public MultipartFile getImage() {
-		return image;
-	}
-
-	public void setImage(MultipartFile image) {
-		this.image = image;
-	}
+//	public MultipartFile getImage() {
+//		return image;
+//	}
+//
+//	public void setImage(MultipartFile image) {
+//		this.image = image;
+//	}
 
 	
 	

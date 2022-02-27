@@ -61,19 +61,19 @@ public class UserService {
 		newUser.setPhone(request.getPhone());
 		newUser.setPostalCode(request.getPostalCode());
 		newUser.setState(request.getState());
-		String fileName =StringUtils.cleanPath(request.getImage().getOriginalFilename());
-		
-		
-		String fileLocation = new File("src\\main\\resources\\static\\asset\\user\\") + "\\" 
-				+ request.getEmail()+"_"+ fileName;
-		
-		newUser.setUserPhotoPath("asset\\user\\"+ request.getEmail()+"_"+ fileName);
-		
-		FileOutputStream output = new FileOutputStream(fileLocation);
-
-		output.write(request.getImage().getBytes());
-
-		output.close();
+//		String fileName =StringUtils.cleanPath(request.getImage().getOriginalFilename());
+//		
+//		
+//		String fileLocation = new File("src\\main\\resources\\static\\asset\\user\\") + "\\" 
+//				+ request.getEmail()+"_"+ fileName;
+//		
+//		newUser.setUserPhotoPath("asset\\user\\"+ request.getEmail()+"_"+ fileName);
+//		
+//		FileOutputStream output = new FileOutputStream(fileLocation);
+//
+//		output.write(request.getImage().getBytes());
+//
+//		output.close();
 		
         loginRepo.save(newAdmin);
 		userRepo.save(newUser);
@@ -110,19 +110,19 @@ public class UserService {
 			newUser.setPostalCode(request.getPostalCode());
 			newUser.setState(request.getState());
 			
-			String fileName =StringUtils.cleanPath(request.getImage().getOriginalFilename());
-			
-			
-			String fileLocation = new File("src\\main\\resources\\static\\asset\\user\\") + "\\" 
-					+ request.getEmail()+"_"+ fileName;
-			
-			newUser.setUserPhotoPath("asset\\user\\"+ request.getEmail()+"_"+ fileName);
-			
-			FileOutputStream output = new FileOutputStream(fileLocation);
-
-			output.write(request.getImage().getBytes());
-
-			output.close();
+//			String fileName =StringUtils.cleanPath(request.getImage().getOriginalFilename());
+//			
+//			
+//			String fileLocation = new File("src\\main\\resources\\static\\asset\\user\\") + "\\" 
+//					+ request.getEmail()+"_"+ fileName;
+//			
+//			newUser.setUserPhotoPath("asset\\user\\"+ request.getEmail()+"_"+ fileName);
+//			
+//			FileOutputStream output = new FileOutputStream(fileLocation);
+//
+//			output.write(request.getImage().getBytes());
+//
+//			output.close();
 			
 			loginRepo.save(newAdmin);
 			userRepo.save(newUser);

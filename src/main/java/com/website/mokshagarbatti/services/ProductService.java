@@ -39,15 +39,15 @@ public class ProductService {
 		newproductEntity.setCreatedBy(request.getLoggedInUser());
 		newproductEntity.setCreatedAt(date);
 		
-		String fileName =StringUtils.cleanPath(request.getImage().getOriginalFilename());
-		String fileLocation = new File("src\\main\\resources\\static\\asset\\product\\") + "\\" 
-				+ request.getProductName()+"_"+ fileName;
-		
-		newproductEntity.setProductImagePath("asset\\product\\"+ request.getProductName()+"_"+ fileName);
-		
-		FileOutputStream output = new FileOutputStream(fileLocation);
-		output.write(request.getImage().getBytes());
-		output.close();
+//		String fileName =StringUtils.cleanPath(request.getImage().getOriginalFilename());
+//		String fileLocation = new File("src\\main\\resources\\static\\asset\\product\\") + "\\" 
+//				+ request.getProductName()+"_"+ fileName;
+//		
+//		newproductEntity.setProductImagePath("asset\\product\\"+ request.getProductName()+"_"+ fileName);
+//		
+//		FileOutputStream output = new FileOutputStream(fileLocation);
+//		output.write(request.getImage().getBytes());
+//		output.close();
 		productRepo.save(newproductEntity);
 		return "product added successfully";
 	}
@@ -64,15 +64,15 @@ public class ProductService {
 			existing.setModifiedBy(request.getLoggedInUser());
 			existing.setModifiedAt(date);
 			
-			String fileName =StringUtils.cleanPath(request.getImage().getOriginalFilename());
-			String fileLocation = new File("src\\main\\resources\\static\\asset\\product\\") + "\\" 
-					+ request.getProductName()+"_"+ fileName;
+//			String fileName =StringUtils.cleanPath(request.getImage().getOriginalFilename());
+//			String fileLocation = new File("src\\main\\resources\\static\\asset\\product\\") + "\\" 
+//					+ request.getProductName()+"_"+ fileName;
 			
-			existing.setProductImagePath("asset\\product\\"+ request.getProductName()+"_"+ fileName);
-			
-			FileOutputStream output = new FileOutputStream(fileLocation);
-			output.write(request.getImage().getBytes());
-			output.close();
+//			existing.setProductImagePath("asset\\product\\"+ request.getProductName()+"_"+ fileName);
+//			
+//			FileOutputStream output = new FileOutputStream(fileLocation);
+//			output.write(request.getImage().getBytes());
+//			output.close();
 			productRepo.save(existing);
 			
 			return "product updated successfully";

@@ -49,7 +49,6 @@ public class MyCartService {
 			Optional<ProductEntity> product = productRepo.findById(myCartEntity.getProductId());
 			cartModel.setCartId(myCartEntity.getCartId());
 			cartModel.setProductName(product.get().getProductName());
-			cartModel.setImgPath(product.get().getProductImagePath());
 			cartModel.setQuantity(myCartEntity.getQuantity());
 			cartModel.setCartTotal(myCartEntity.getTotalPriceOfProduct());
 			
