@@ -111,7 +111,7 @@ function adminOrder(status){
                '<td>'+obj.orderDate+'</td>'+
                '<td>'+obj.status+'</td>';
                
-               if(status == ""){
+               if(obj.status == "PENDING"){
                 orderCard += '<td><button type="button" value='+obj.orderId+' onclick="completeOrder(this.value)" class="btn btn-success">Complete</button></td>'
                 '</tr>';
                }else{

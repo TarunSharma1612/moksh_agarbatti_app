@@ -20,7 +20,7 @@ function getRetailers(){
                usercard +=
             '<div class="col-sm-4 py-2">' + 
                 '<div id = '+obj.userId+' class="card">'+
-                '<img src= "asset/userdefaultpic.jpg" alt="John" style="width:100%""> </div>'+
+                ' </div>'+
                 '<h4 class="bg-dark text-white d-flex justify-content-sm-center" ">'+obj.retailerShopName+'</h4>'+
                 '<p class="bg-secondary text-white">'+obj.address1+'&nbsp'+obj.address2+'<br>'+
                  obj.city+','+obj.state+'<br>( '+obj.country+' )<br>'+obj.email+'<br>'+obj.phone+'</p>'+
