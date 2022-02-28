@@ -76,8 +76,9 @@ public class MyCartService {
 			return "cart already exists with given details";
 		}
 		ProductEntity existingProductDetails = productDetails.get();
-		Log.info("user ");
+		Log.info("user mail"+requestModel.getLoggedIn());
 		Optional<UserEntity> user = userRepo.findByEmail(requestModel.getLoggedIn());
+		Log.info("user present"+user.isPresent());
 		MyCartEntity newcart = new MyCartEntity();
 		Date date = new Date();
 		newcart.setProductId(requestModel.getProductId());
