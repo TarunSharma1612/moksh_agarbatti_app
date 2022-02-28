@@ -76,8 +76,8 @@ public class MyCartService {
 			return "cart already exists with given details";
 		}
 		ProductEntity existingProductDetails = productDetails.get();
-		Log.info("user mail"+requestModel.getLoggedIn());
-		Optional<UserEntity> user = userRepo.findByEmail(requestModel.getLoggedIn());
+		Log.info("user mail "+requestModel.getLoggedIn());
+		Optional<UserEntity> user = userRepo.findByEmail(requestModel.getLoggedIn().toLowerCase());
 		Log.info("user present"+user.isPresent());
 		MyCartEntity newcart = new MyCartEntity();
 		Date date = new Date();
@@ -86,9 +86,11 @@ public class MyCartService {
 		newcart.setTotalPriceOfProduct(requestModel.getQuantity() * 
 				existingProductDetails.getPrice() * (1-(existingProductDetails.getDiscount()/100)));
 		newcart.setStatus(OrderStatus.PENDING_IN_CART);
+		Log.info("set user id");
 		newcart.setUserId(user.get().getUserId());
 		newcart.setCreatedAt(date);
 		newcart.setCreatedBy(requestModel.getLoggedIn());
+		Log.info("save cart");
 		cartRepo.save(newcart);
 		return "cart details added successfully";
 	}
