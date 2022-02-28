@@ -5,10 +5,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.website.mokshagarbatti.constant.OrderStatus;
+import com.website.mokshagarbatti.controller.MyCartController;
 import com.website.mokshagarbatti.entity.MyCartEntity;
 import com.website.mokshagarbatti.entity.ProductEntity;
 import com.website.mokshagarbatti.entity.UserEntity;
@@ -20,6 +23,8 @@ import com.website.mokshagarbatti.repository.UserRepo;
 
 @Service
 public class MyCartService {
+	
+	private static Logger Log = LogManager.getLogger(MyCartService.class);
 
 	@Autowired
 	private MyCartRepo cartRepo;
@@ -60,13 +65,18 @@ public class MyCartService {
 	}
 
 	public String addCartDetails(AddCartRequestModel requestModel) {
+		Log.info("ADD_CART_SERVICES");
+		Log.info("PRODUCT ID "+requestModel.getProductId());
 		Optional<MyCartEntity> existingCart = cartRepo.findCartByDetails(requestModel.getProductId(),
 				requestModel.getUserId());
+		Log.info("existingCart ");
 		Optional<ProductEntity> productDetails = productRepo.findById(requestModel.getProductId());
+		Log.info("productDetails ");
 		if (existingCart.isPresent() || productDetails == null) {
 			return "cart already exists with given details";
 		}
 		ProductEntity existingProductDetails = productDetails.get();
+		Log.info("user ");
 		Optional<UserEntity> user = userRepo.findByEmail(requestModel.getLoggedIn());
 		MyCartEntity newcart = new MyCartEntity();
 		Date date = new Date();
