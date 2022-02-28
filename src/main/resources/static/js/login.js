@@ -49,13 +49,17 @@ function checkLogin() {
 }
 
 
-function myProfile() {
+function myProfile(shopName) {
   let url = "admin/profile";
   if (sessionStorage.getItem("USERID") != null) {
 
-    const item = {
-      userEmail: sessionStorage.getItem("USERID")
+    const item = {};
+    if (shopName === undefined) {
+      item.userEmail = sessionStorage.getItem("USERID");
+    }else{
+      item.userEmail = shopName;
     }
+
 
     fetch(url, {
       method: 'POST',

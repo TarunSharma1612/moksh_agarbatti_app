@@ -11,7 +11,8 @@ import com.website.mokshagarbatti.entity.UserEntity;
 @Repository
 public interface UserRepo extends JpaRepository<UserEntity, Long> {
 
-	Optional<UserEntity> findByEmail(String email);
+	@Query(value = "Select * from user_details where lower( username )= ?1 OR lower(retailer_shop_name) = ?1 limit 1",nativeQuery = true)
+	Optional<UserEntity> findByEmailAndShop(String email);
 
 	@Query(value = "Select * from user_details where lower(retailer_shop_name) like : ?1",nativeQuery = true)
 	Optional<UserEntity> findByUserShopName(String userName);

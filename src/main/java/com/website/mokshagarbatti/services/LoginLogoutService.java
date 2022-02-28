@@ -78,7 +78,7 @@ public class LoginLogoutService {
 	}
 
 	public Object findProfileByEmail(String userEmail) {
-		Optional<UserEntity> userOptional = userRepo.findByEmail(userEmail);
+		Optional<UserEntity> userOptional = userRepo.findByEmailAndShop(userEmail.toLowerCase());
 		if (userOptional.isPresent()) {
 			return userOptional.get();
 		}else {

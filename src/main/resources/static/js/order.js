@@ -103,7 +103,7 @@ function adminOrder(status){
            for (let index = 0; index < arr.length; index++) {
                var obj = arr[index];
                orderCard +='<tr>'+
-               '<td>'+obj.orderBy+'</td>'+
+               '<td><a href ="javascript:myProfile(\''+obj.orderBy+'\')">'+obj.orderBy+'</a></td>'+
                '<td>'+obj.category+'</td>'+
                '<td>'+obj.productName+'</td>'+
                '<td>'+obj.quantity+'</td>'+
