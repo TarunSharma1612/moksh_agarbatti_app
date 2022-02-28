@@ -47,7 +47,7 @@ public class MyCartService {
 
 	public List<CartResponse> allProductDetails(String userEmail) {
 		List<CartResponse> cartResponses = new ArrayList<>();
-		UserEntity user = userRepo.getByEmailId(userEmail);
+		UserEntity user = userRepo.getByEmailId(userEmail.toLowerCase());
 		List<MyCartEntity> carts = cartRepo.findAllByUserId(user.getUserId());
 		for (MyCartEntity myCartEntity : carts) {
 			CartResponse cartModel = new CartResponse();
