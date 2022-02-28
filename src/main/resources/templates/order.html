@@ -35,7 +35,12 @@
                 data-dismiss="alert"></span>
             <h1>My Order</h1>
         </div>
+        <div id="orderButton"  class="btn-group d-flex" role="group" aria-label="...">
+            <button type="button" id="pendingButton" onclick="javascript:adminOrder('PENDING_WITH_ADMIN')" class="btn btn-primary w-100" style="display: none;">PENDING</button>
+            <button type="button" id="completeButton" onclick="javascript:adminOrder('COMPLETED')" class="btn btn-primary w-100" style="display: none;">COMPLETED</button>
+          </div>
     </div>
+  
 
     <table class="table table-bordered">
         <thead style="background-color:yellow">
@@ -52,6 +57,11 @@
         </thead>
         <tbody id="order">
             <script>
+                
+                if(sessionStorage.getItem("ROLE")=="ADMIN"){
+                    document.getElementById("pendingButton").style.display = "block";
+                    document.getElementById("completeButton").style.display = "block";
+                }
 
                 if (sessionStorage.getItem("MYORDER") != null) {
                     document.getElementById("order").innerHTML = sessionStorage.getItem("MYORDER");

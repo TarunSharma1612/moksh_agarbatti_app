@@ -30,6 +30,7 @@ public class MyCartController {
 	
 	@PostMapping("/add-cart")
 	private Map<String, String> addProductInCart(@RequestBody AddCartRequestModel requestModel){
+		Log.info("ADD_CART_CONTROLLER");
 		LocalDate startDate = LocalDate.now();
 		Map<String, String> result= new HashMap<>();
 		String status = cartService.addCartDetails(requestModel);

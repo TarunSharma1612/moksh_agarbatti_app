@@ -108,14 +108,17 @@ function myProfile(shopName) {
             + ' </div>'
             + '</div>'
 
-            + '<div class="row pt-1">'
+            + '<div class="row pt-1">';
 
-            + ' <div class="col-6 mb-3">'
+            if (shopName === undefined) {
+              card +=   ' <div class="col-6 mb-3">'
             + '     <a href="#" class="btn btn-danger" onclick="logout()">'
             + '         <span class="glyphicon glyphicon-log-out" ></span> Log out'
             + '       </a>'
             + ' </div>'
-            + '</div>'
+            } 
+
+            card +=  '</div>'
 
             + '</div>'
             + '</div> ';
@@ -155,14 +158,17 @@ function myProfile(shopName) {
             + ' </div>'
             + '</div>'
 
-            + '<div class="row pt-1">'
+            + '<div class="row pt-1">';
 
-            + ' <div class="col-6 mb-3">'
+            if (shopName === undefined) {
+              card +=   ' <div class="col-6 mb-3">'
             + '     <a href="#" class="btn btn-danger" onclick="logout()">'
             + '         <span class="glyphicon glyphicon-log-out" ></span> Log out'
             + '       </a>'
             + ' </div>'
-            + '</div>'
+            } 
+
+            card +=  '</div>'
 
             + '</div>'
             + '</div> ';
