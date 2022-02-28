@@ -20,4 +20,5 @@ public interface UserRepo extends JpaRepository<UserEntity, Long> {
 	@Query(value = "Select * from user_details where username = ?1",nativeQuery = true)
 	UserEntity getByEmailId(String userEmail);
 
+	Optional<UserEntity> findByEmail(String email);
 }
