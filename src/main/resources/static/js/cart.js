@@ -7,7 +7,7 @@ function addToCart(prodId){
     }
 
     for (let x in item) {
-      if (item[x]==null || item[quantity]== 0) {
+      if (item[x]==null || item.quantity == 0) {
         swal({
         title: "Error",
         text: "All feilds are mandatory and quantity should be greater than 0",
