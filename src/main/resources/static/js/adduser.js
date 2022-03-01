@@ -36,7 +36,7 @@
 		if (item[x]==null) {
 		  swal({
 			title: "Error",
-			text: "All feilds are mandatory",
+			text: "All fields are mandatory",
 			icon: "error",
 			button: "Try Again",
 		  }).then((value) => {

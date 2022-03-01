@@ -34,7 +34,7 @@ function addProduct(){
     if (item[x]==null || item[price] == 0) {
       swal({
         title: "Error",
-        text: "All feilds are mandatory and price should be greater than 0",
+        text: "All fields are mandatory and price should be greater than 0",
         icon: "error",
         button: "Try Again",
       }).then((value) => {
