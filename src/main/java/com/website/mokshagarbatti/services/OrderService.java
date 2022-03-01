@@ -45,7 +45,7 @@ public class OrderService {
 	}
 
 	public List<OrderStatusResponse> myOrderDetails(String userEmail) {
-		Optional<UserEntity> userOptional = userRepo.findByEmail(userEmail);
+		Optional<UserEntity> userOptional = userRepo.findByEmail(userEmail.toLowerCase());
 		if (userOptional.isPresent()) {
 			return orderRepo.findOrderByUserId(userOptional.get().getUserId());
 		}else {

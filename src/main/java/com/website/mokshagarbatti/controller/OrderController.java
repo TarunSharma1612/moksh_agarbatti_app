@@ -80,6 +80,7 @@ public class OrderController {
 	
 	@PostMapping("/my-order")
 	private Map<String, List<OrderStatusResponse>> getMyOrderHistory(@RequestBody UserDetailsRequest request){
+		Log.info("My_order");
 		LocalDate startDate = LocalDate.now();
 		Map<String, List<OrderStatusResponse>> result= new HashMap<>();
 		List<OrderStatusResponse> status = orderService.myOrderDetails(request.getUserEmail());
