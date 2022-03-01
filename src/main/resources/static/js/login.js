@@ -204,3 +204,41 @@ function logout() {
   // window.location.href = '/';
 
 }
+
+
+
+function ValidateEmail() {
+  var email = document.getElementById("email").value;
+  var lblError = document.getElementById("emailError");
+  lblError.innerHTML = "";
+  var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+  if (!expr.test(email)) {
+      lblError.innerHTML = "Invalid email address.";
+      document.getElementById("registerButton").disabled = true;
+  }else{
+    document.getElementById("registerButton").disabled = false;
+  }
+}
+function ValidatePass() {
+  var pass = document.getElementById("password").value;
+  var lblError = document.getElementById("passError");
+  lblError.innerHTML = "";
+  if (pass.length >=16 || pass.length <5) {
+      lblError.innerHTML = "Password should contains min 5 and max 15 character";
+      document.getElementById("registerButton").disabled = true;
+    }else{
+      document.getElementById("registerButton").disabled = false;
+    }
+}
+function ConfirmPass() {
+  var pass1 = document.getElementById("password").value;
+  var pass2 = document.getElementById("confirmpassword").value;
+  var lblError = document.getElementById("confirmError");
+  lblError.innerHTML = "";
+  if (pass1 != pass2) {
+      lblError.innerHTML = "Password is not matching";
+      document.getElementById("registerButton").disabled = true;
+    }else{
+      document.getElementById("registerButton").disabled = false;
+    }
+}

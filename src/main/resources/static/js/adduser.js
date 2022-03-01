@@ -12,6 +12,9 @@
 		loggedIn = loggedIn+email;
 	 }
 
+
+	 
+
 	 const item = {
 		email : document.getElementById('email').value,
 		password : document.getElementById('password').value,
@@ -98,4 +101,10 @@ function loadhome () {
   }
   
   window.location.href = url;
+}
+
+
+
+function checkEmailPassword(String){
+
 }
