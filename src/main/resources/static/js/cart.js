@@ -23,7 +23,7 @@ function addToCart(prodId){
               icon: "success",
               button: "Ok",
             }).then((value) => {
-              window.location.assign ("/cart") ;
+             getCart() ;
             });
   
             
@@ -114,8 +114,7 @@ function removeCart(cartId){
           icon: "success",
           button: "Ok",
         }).then((value) => {
-          window.location.href = "/userpage";
-          window.location.href = "/cart";
+          getCart();
         });
 
         
@@ -125,8 +124,7 @@ function removeCart(cartId){
           icon: "error",
           button: "Try Again",
         }).then((value) => {
-          window.location.href = "/userpage";
-          window.location.href = "/cart";
+          getCart();
         });
       }
     })

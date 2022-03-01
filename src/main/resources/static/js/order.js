@@ -24,7 +24,7 @@ function addOrder(){
               icon: "success",
               button: "Ok",
             }).then((value) => {
-              window.location.assign ("/order") ;
+              myOrder();
             });
   
             
@@ -151,7 +151,7 @@ function completeOrder(id){
           icon: "success",
           button: "Ok",
         }).then((value) => {
-          window.location.assign ("/order") ;
+          adminOrder("COMPLETED") ;
         });
 
         
