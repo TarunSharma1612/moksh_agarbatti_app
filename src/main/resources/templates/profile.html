@@ -36,11 +36,13 @@
             $(function () {
                 $("#nav").load("adminnav.html");
             });
-        } else {
-            $(function () {
-                $("#nav").load("usernav.html");
-            });
-        }
+        } else if(sessionStorage.getItem("ROLE") == "RETAILER"){
+			$(function () {
+				$("#nav").load("usernav.html");
+			});
+		}else{
+			window.location.href = "/";
+		}
     </script>
   
   <section class="vh-100" style="background-color: #f4f5f7;">

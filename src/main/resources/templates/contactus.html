@@ -82,11 +82,13 @@
       $(function(){
   $("#nav").load("adminnav.html");
 });
-    } else {
-      $(function(){
-  $("#nav").load("usernav.html");
-});
-}
+    }  else if(sessionStorage.getItem("ROLE") == "RETAILER"){
+			$(function () {
+				$("#nav").load("usernav.html");
+			});
+		}else{
+			window.location.href = "/";
+		}
 </script>
   <div class="container d-flex justify-content-center">
     <div class="row my-2 mx-2">

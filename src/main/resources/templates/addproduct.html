@@ -18,6 +18,9 @@
    <div id="nav">
    </div>
    <script>
+     if (sessionStorage.getItem("USERID") == null) {
+			window.location.href = "/";
+		}
      $(function(){
    $("#nav").load("adminnav.html");
  });
