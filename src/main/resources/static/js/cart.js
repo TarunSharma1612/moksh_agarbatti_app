@@ -21,8 +21,7 @@ function addToCart(prodId){
        });
       } 
       }
-
-    console.log(item);
+      
     fetch(url, {
         method: 'POST',
         headers: {
@@ -153,4 +152,6 @@ function removeCart(cartId){
 }                     
           
                
-            
+ function updateCart(){
+   
+ }           
