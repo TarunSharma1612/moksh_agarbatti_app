@@ -47,7 +47,7 @@ function getProduct(category) {
 
 
         if (sessionStorage.getItem("ROLE") == "RETAILER") {
-          card += '<div class="buttons d-flex flex-row">' +
+          productcard += '<div class="buttons d-flex flex-row">' +
             '<div class="row">' +
             '<div class="col">' +
             '<input type="text" id="qty' + obj.productId + '"class="form-control" placeholder="Qty.">' +
@@ -56,12 +56,12 @@ function getProduct(category) {
             '<button value=' + obj.productId + ' onclick="addToCart(this.value)" class="btn btn-success"> Add to Cart</button>' +
             '</div></div></div>';
         } else {
-          card += '<div class="col">' +
+          productcard += '<div class="col">' +
             '<button value=' + obj.productId + ' onclick="updateProduct()" class="btn btn-success">Update Details</button>' +
             '</div>';
         }
 
-        card += '</div></div></div>' +
+        productcard += '</div></div></div>' +
           ' </div></div> </div>';
       }
       sessionStorage.setItem("PRODUCT", productcard);

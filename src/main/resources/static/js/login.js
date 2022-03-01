@@ -245,7 +245,7 @@ function ConfirmPass() {
 
 
 
-function checkLupdatePasswordogin() {
+function updatePassword() {
   let url = "/admin/forgot";
 
   const item = {
