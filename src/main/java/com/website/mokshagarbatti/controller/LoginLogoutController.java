@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.website.mokshagarbatti.model.ForgotPassWordModel;
 import com.website.mokshagarbatti.model.LoginRequestModel;
 import com.website.mokshagarbatti.services.LoginLogoutService;
 
@@ -37,9 +38,16 @@ public class LoginLogoutController {
 		return result;
 	}
 	
-	@PostMapping("/logout")
-	private Map<String, String> logoutControllerMethod(){
+	@PostMapping(value = "/forgot",consumes = {"application/json"})
+	private Map<String, String> forgotPasswordControllerMethod(@RequestBody @Valid ForgotPassWordModel request){
+		LocalDate startDate = LocalDate.now();
 		Map<String, String> result= new HashMap<>();
+		String status = logServices.forgotPassword(request);
+		result.put("status", status);
+		LocalDate endDate = LocalDate.now();
+		Log.info("FORGOT_PASSWORD | "+startDate+" | "+endDate +" | "+ status);
 		return result;
 	}
+	
+	
 }

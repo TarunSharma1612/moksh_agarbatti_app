@@ -13,16 +13,16 @@ import com.website.mokshagarbatti.entity.Order;
 @Repository
 public interface MyCartRepo extends JpaRepository<MyCartEntity, Long> {
 
-	@Query(value = "select * from user_cart_details where user_id = ?1 and status = 'PENDING_IN_CART'" ,nativeQuery = true)
+	@Query(value = "select * from user_cart_details where user_id = ?1 and status = 'PENDING_IN_CART' order by created_at" ,nativeQuery = true)
 	List<MyCartEntity> findAllByUserId(Long userId);
 
-	@Query(value = "select * from user_cart_details where product_id = ?1 and user_id = ?2 and status = 'PENDING_IN_CART'" ,nativeQuery = true)
+	@Query(value = "select * from user_cart_details where product_id = ?1 and user_id = ?2 and status = 'PENDING_IN_CART' " ,nativeQuery = true)
 	Optional<MyCartEntity> findCartByDetails(long productId, long userId);
 
-	@Query(value = "select * from user_cart_details where cart_id in ?1 and status = 'PENDING_WITH_ADMIN'" ,nativeQuery = true)
+	@Query(value = "select * from user_cart_details where cart_id in ?1 and status = 'PENDING_WITH_ADMIN' order by created_at" ,nativeQuery = true)
 	List<Order> findByCartId(List<Long> cartIds);
 
-	@Query(value = "select * from user_cart_details where cart_id in ?1 and status = 'PENDING_IN_CART'" ,nativeQuery = true)
+	@Query(value = "select * from user_cart_details where cart_id in ?1 and status = 'PENDING_IN_CART' order by created_at" ,nativeQuery = true)
 	List<MyCartEntity> findByIdAndStatus(List<Long> cartIds);
 
 }

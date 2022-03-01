@@ -57,7 +57,7 @@ function getProduct(category) {
             '</div></div></div>';
         } else {
           card += '<div class="col">' +
-            '<button value=' + obj.productId + ' onclick="updateCart()" class="btn btn-success">Update Details</button>' +
+            '<button value=' + obj.productId + ' onclick="updateProduct()" class="btn btn-success">Update Details</button>' +
             '</div>';
         }
 

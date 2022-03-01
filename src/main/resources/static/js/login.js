@@ -242,3 +242,55 @@ function ConfirmPass() {
       document.getElementById("registerButton").disabled = false;
     }
 }
+
+
+
+function checkLupdatePasswordogin() {
+  let url = "/admin/forgot";
+
+  const item = {
+    username: document.getElementById('email').value,
+    password: document.getElementById('password').value,
+    recoverQuestion: document.getElementById('recoverqs').value,
+    recoverAnswer: document.getElementById('recoverAnswer').value
+
+  };
+
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(item),
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.status.startsWith("Password")) {
+        swal({
+          title: data.status,
+          text: "Click ok to proceed !",
+          icon: "success",
+          button: "Ok",
+        }).then((value) => {
+          window.location.href = "/";
+        });
+
+
+      } else {
+        swal({
+          title: "Error",
+          text: data.status,
+          icon: "error",
+          button: "Try Again",
+        }).then((value) => {
+          window.location.href = "/signup";
+        });;
+
+      }
+    })
+    .catch(error => swal({
+      title: "Unexpected error",
+      icon: "error",
+      button: "Try Again",
+    }));
+}

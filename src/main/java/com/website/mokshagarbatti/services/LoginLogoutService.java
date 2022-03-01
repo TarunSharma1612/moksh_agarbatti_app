@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.website.mokshagarbatti.entity.LoginEntity;
 import com.website.mokshagarbatti.entity.UserEntity;
 import com.website.mokshagarbatti.model.AddAdminRequestModel;
+import com.website.mokshagarbatti.model.ForgotPassWordModel;
 import com.website.mokshagarbatti.model.LoginRequestModel;
 import com.website.mokshagarbatti.repository.LoginRepo;
 import com.website.mokshagarbatti.repository.UserRepo;
@@ -88,6 +89,27 @@ public class LoginLogoutService {
 			}
 		}
 		return null;
+		
+	}
+
+	public String forgotPassword(@Valid ForgotPassWordModel request) {
+		
+		 Optional<LoginEntity> checkUser = loginRepo.forgotPassword(request.getUsername().toLowerCase(),request.getRecoverQuestion().toLowerCase()
+				 ,request.getRecoverAnswer().toLowerCase());
+		 
+		 if (checkUser.isPresent()) {
+			 LoginEntity login = checkUser.get();
+			 
+			 login.setPassword(request.getPassword());
+			 login.setModifiedAt(new Date());
+			 login.setModifiedBy(request.getUsername());
+			 loginRepo.save(login);
+			 
+			 return "Password changed successfully !";
+		} else {
+			 return "User not Present with given details!";
+		}
+		 
 		
 	}
 

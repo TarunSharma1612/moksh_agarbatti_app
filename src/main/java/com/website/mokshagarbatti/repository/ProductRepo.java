@@ -16,7 +16,7 @@ public interface ProductRepo extends JpaRepository<ProductEntity, Long> {
 	@Query(value = "select * from product_details where category = ?1 and product_name = ?2" ,nativeQuery = true)
 	Optional<ProductEntity> findByCategoryAndName(String category, String productName);
 
-	@Query(value = "select * from product_details where category = ?1" ,nativeQuery = true)
+	@Query(value = "select * from product_details where category = ?1 order by created_at" ,nativeQuery = true)
 	List<ProductEntity> findAllByCategory(String category);
 
 	@Query(value = "select * from product_details where lower(product_name) like ?1" ,nativeQuery = true)

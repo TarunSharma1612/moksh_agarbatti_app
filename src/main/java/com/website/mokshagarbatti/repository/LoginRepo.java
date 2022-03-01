@@ -19,4 +19,9 @@ public interface LoginRepo extends JpaRepository<LoginEntity, Long> {
 	@Query(value = "select * from login_details where lower(user_name) = ?1" , nativeQuery = true)
 	Optional<LoginEntity> findByUserName(String username);
 
+
+	@Query(value = "select * from login_details where lower(user_name) = ?1"
+			+ " and lower(recover_pass_question) = ?2 and lower(recover_pass_answer) = ?3" , nativeQuery = true)
+	Optional<LoginEntity> forgotPassword(String username, String recoverQuestion, String recoverAnswer);
+
 }
