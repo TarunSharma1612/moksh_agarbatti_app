@@ -2,8 +2,7 @@ function addProduct(){
     let url = "/product/add-product";
 	//  const formData = new FormData();
 	//  const fileField = document.querySelector('input[type="file"]');
-	 
-	 
+	
 	 let loggedIn = "";
 	 if (sessionStorage.getItem("ROLE")=="ADMIN") {
     loggedIn = loggedIn+sessionStorage.getItem("USERID")
@@ -31,6 +30,21 @@ function addProduct(){
     loggedInUser :loggedIn
    };
 
+   for (let x in item) {
+    if (item[x]==null || item[price] == 0) {
+      swal({
+        title: "Error",
+        text: "All feilds are mandatory and price should be greater than 0",
+        icon: "error",
+        button: "Try Again",
+      }).then((value) => {
+   
+       
+      window.location.href = '/product';
+       
+     });
+    } 
+  }
 
 	 
 	 

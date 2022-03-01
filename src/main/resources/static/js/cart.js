@@ -5,6 +5,23 @@ function addToCart(prodId){
         quantity : document.getElementById('qty'+prodId).value,
         loggedIn : sessionStorage.getItem('USERID')
     }
+
+    for (let x in item) {
+      if (item[x]==null || item[quantity]== 0) {
+        swal({
+        title: "Error",
+        text: "All feilds are mandatory and quantity should be greater than 0",
+        icon: "error",
+        button: "Try Again",
+        }).then((value) => {
+       
+         
+        window.location.href = '/cart';
+         
+       });
+      } 
+      }
+
     console.log(item);
     fetch(url, {
         method: 'POST',

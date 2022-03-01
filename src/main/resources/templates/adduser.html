@@ -63,28 +63,20 @@
 
 									<div class="form-group">
 										<label for="email">E-Mail Address</label>
-										<input id="email" type="email" class="form-control" name="email" required>
-										<div class="invalid-feedback">
-											Your email is invalid
-										</div>
+										<input id="email" type="email" class="form-control" name="email" onkeyup="ValidateEmail();"  required>
+									<span id="emailError" style="color: red"></span>
 									</div>
 
 									<div class="form-group">
 										<label for="password">Password</label>
-										<input id="password" type="password" class="form-control" name="password"
-											required data-eye>
-										<div class="invalid-feedback">
-											Password is required
-										</div>
-									</div>
-									<div class="form-group">
-										<label for="confirmpassword">Confirm Password</label>
-										<input id="confirmpassword" type="text" class="form-control"
-											name="confirmpassword" required data-eye>
-										<div class="invalid-feedback">
-											Not Matching
-										</div>
-									</div>
+										<input id="password" type="password" class="form-control" name="password" onkeyup="ValidatePass();" required data-eye>
+									<span id="passError" style="color: red"></span>
+								</div>
+								<div class="form-group">
+									<label for="confirmpassword">Confirm Password</label>
+									<input id="confirmpassword" type="text" class="form-control" name="confirmpassword" onkeyup="ConfirmPass();" required data-eye>
+									<span id="confirmError" style="color: red"></span>
+								</div>
 
 									<div class="form-group">
 										<label for="address1">Address1</label>

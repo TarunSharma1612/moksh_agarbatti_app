@@ -31,6 +31,22 @@
 		recoverAnswer : document.getElementById('recoverAnswer').value,
 		loggedInUser : loggedIn
 	 };
+
+	 for (let x in item) {
+		if (item[x]==null) {
+		  swal({
+			title: "Error",
+			text: "All feilds are mandatory",
+			icon: "error",
+			button: "Try Again",
+		  }).then((value) => {
+	   
+		   
+		  window.location.href = '/adduser';
+		   
+		 });
+		} 
+	  }
 	 
 	//  formData.append('email', email);
 	//  formData.append('password', password);
